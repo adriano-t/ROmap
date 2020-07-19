@@ -44,16 +44,23 @@ window.addEventListener("load", function(){
     var i;
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function(event) {
-            if(event.target != this)
-                return; 
+            // if(event.target != this)
+            //     return; 
             event.preventDefault();
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             if (panel.style.maxHeight)
+            {
+                setIconOpen(this, true);
                 panel.style.maxHeight = null;
+            }
             else
+            {
+                setIconOpen(this, false);
                 panel.style.maxHeight = panel.scrollHeight + "px";  
+            }
                 
+            //expand parent
             this.parentElement.style.maxHeight = this.parentElement.scrollHeight + "px"; 
             console.log(this.parentElement);
         });
@@ -69,15 +76,36 @@ window.addEventListener("load", function(){
     }
     //const yaml = require('js-yaml');
     //;
-    try {
-        let fileContents = readTextFile("./poldo.yaml", function(text){
-            let data = jsyaml.safeLoad(text);
-            console.log(data);
-        });
-    } catch (e) {
-        console.log(e);
-    }
+    // try {
+    //     let fileContents = readTextFile("./poldo.yaml", function(text){
+    //         let data = jsyaml.safeLoad(text);
+    //         console.log(data);
+    //     });
+    // } catch (e) {
+    //     console.log(e);
+    // }
 }, false);
+
+function setIconOpen(element, open)
+{
+  var classAdd;
+  var classRemove;
+  if(open) {
+    classAdd = 'fa-chevron-down';
+    classRemove = 'fa-chevron-up';
+  }
+  else {
+    classAdd = 'fa-chevron-up';
+    classRemove = 'fa-chevron-down';
+  }
+  
+  var child = element.querySelector("." + classRemove);
+  if(child)
+  { 
+    child.classList.remove(classRemove);
+    child.classList.add(classAdd);
+  }
+}
 
 function readTextFile(file, func)
 {
