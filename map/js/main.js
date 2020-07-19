@@ -52,7 +52,10 @@ window.addEventListener("load", function(){
             if (panel.style.maxHeight)
                 panel.style.maxHeight = null;
             else
-                panel.style.maxHeight = panel.scrollHeight + "px";            
+                panel.style.maxHeight = panel.scrollHeight + "px";  
+                
+            this.parentElement.style.maxHeight = this.parentElement.scrollHeight + "px"; 
+            console.log(this.parentElement);
         });
     }
 
