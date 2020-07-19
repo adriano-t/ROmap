@@ -1,0 +1,107 @@
+body{
+  font: 12pt Verdana;
+  background:#fafafa;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius:5px;
+    border:1px solid #ddd;
+    margin-top:5px;
+    font-weight:bold;
+  }
+  
+  .score {
+    display: inline-block;
+    float:right;
+  }
+
+  .number{
+    padding:2px;
+    width:30px;
+    font-weight:normal;
+  }
+
+  .maxpoints{
+    width:45px;
+    display:inline-block;
+    text-align:center;
+    border:1px solid #aaa;
+    background-color: #efefef;
+    padding:2px;
+    border-radius:4px;
+    font-weight:normal;
+  }
+ 
+  .head{
+    border:1px solid #ddd;
+    background-color: #eee;
+    border-radius:5px;
+    padding:5px;
+  }
+
+  .box{
+    margin: 5px 0px;
+  }
+  
+  .section {
+    font-size:12pt;
+    font-weight:normal;
+    padding:2px 0px;
+    margin:2px 0px;
+    color:#333;
+  }
+
+  .competence{
+    background-color: #555;
+    border-radius:4px;
+    color:#eee;
+    display:inline-block;
+    padding:5px;
+    font-size: 10pt;
+  }
+ 
+  select{
+    padding: 3px;
+    width:200px;
+  }
+  textarea {
+      width: 100%;
+      padding-bottom: 10px;
+  }
+ 
+
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /*
+  .active:after {
+    content: "\2212";
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  */
+  
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
