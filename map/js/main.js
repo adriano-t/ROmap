@@ -1,41 +1,3 @@
-
-
-/* YAML ESEMPIO POLDO
----
-name: dp_poldo
-skills : 
-    - grafi
-    - modellazione
-    - buona caratterizzazione 
-title: Sottosequenze crescenti e decrescenti
-description1: Si consideri la seguente sequenza di numeri naturali:<br>\[63, 18, 55, 81, 7, 9, 25, 13, 31, 47, 70, 83, 4, 32, 16, 61, 43, 20, 15, 54, 63, 99, 43, 14, 27\]
-
-tasks:
-- {
-    tot_points: 10,
-    ver_points: 10,
-    description1: "Trovare una sottosequenza crescente che sia la più lunga possibile"
-  }
-- {
-    tot_points: 20,
-    ver_points: 20,
-    description1: "Trovare quante sono le sottosequenze crescenti di lunghezza massima"
-  }
-- {
-    tot_points: 20,
-    ver_points: 20,
-    description1: "Una sequenza è detta una _Z-sequenza_ , o sequenza crescente con un possibile ripensamento, se esiste un indice _i_ tale che ciascuno degli elementi della sequenza esclusi al più il primo e l'_i_-esimo sono strettamente maggiori dell'elemento che immediatamente li precede nella sequenza. Trovare la più lunga Z-sequenza che sia una sottosequenza della sequenza data"
-  }
-- {
-    tot_points: 10,
-    ver_points: 10,
-    description1: "Trovare la più lunga sottosequenza crescente che includa l'elemento di valore 32"
-  }
-...
-
-*/
-
-
 window.addEventListener("load", function(){
 
 
@@ -44,8 +6,9 @@ window.addEventListener("load", function(){
     var i;
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function(event) {
-            // if(event.target != this)
-            //     return; 
+             console.log(event.target.classList)
+             if(event.target.classList.contains("submit_mode") || event.target.classList.contains("number") || event.target.parentNode.classList.contains("submit_mode"))
+                     return; 
             event.preventDefault();
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
@@ -84,6 +47,7 @@ window.addEventListener("load", function(){
     // } catch (e) {
     //     console.log(e);
     // }
+    load();
 }, false);
 
 function setIconOpen(element, open)
@@ -122,6 +86,32 @@ function readTextFile(file, func)
         }
     }
     rawFile.send(null);
+}
+
+function load(){
+    if(!localStorage.getItem('points')){
+        !console.log(localStorage.getItem('points'), "no dati")
+        return
+    }    
+    var arr_load=JSON.parse(localStorage.getItem('points'))
+    var elements = document.querySelectorAll(".select_points")
+    var i = 0;
+    elements.forEach(function(element){
+        console.log(element);
+        element.selectedIndex=arr_load[i];
+        i++;
+    });
+}
+
+function save(){
+    var arr_save=[];
+    var elements = document.querySelectorAll(".select_points")
+    console.log(elements)
+    elements.forEach(function(element){
+        console.log(element);
+        arr_save.push(element.selectedIndex)
+    })
+    localStorage.setItem('points',JSON.stringify(arr_save))
 }
 
 // Restricts input for the given textbox to the given inputFilter function.
