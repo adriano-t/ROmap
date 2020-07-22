@@ -1,13 +1,36 @@
+var num_modes;
+var all_scores=[];
+var current_modes=[];
+var tot_num_subprob;
 window.addEventListener("load", function(){
+    tot_num_subprob = document.querySelectorAll(".select_points").length
+    num_modes=document.querySelector(".submit_mode").length
 
-
+    for(i=0;i<num_modes;i++){
+        var a=[]
+        for(j=0;j<tot_num_subprob;j++)
+            a.push(0);
+        all_scores.push(a);
+    }
+    
+    //DA COMPLETARE, SALVATAGGIO PUNTEGGI E CAMBIO MODALITÀ
+    var buttons = document.querySelectorAll(".select_points")
+    buttons.forEach(function(element){
+        element.addEventListener("change", function(){
+            //var current_subp = element.parentNode.parentNode.parentNode.classList;
+            var current_index_mod = element.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[3].selectedIndex;
+            console.log(variabile)
+            //all_scores[]=element.selectedIndex
+        })
+    })
+    
     //accordion
     var acc = document.getElementsByClassName("accordion");
     var i;
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function(event) {
              console.log(event.target.classList)
-             if(event.target.classList.contains("submit_mode") || event.target.classList.contains("number") || event.target.parentNode.classList.contains("submit_mode"))
+             if(event.target.classList.contains("submit_mode") || event.target.classList.contains("select_points") || event.target.parentNode.classList.contains("submit_mode") ||event.target.parentNode.classList.contains("select_points"))
                      return; 
             event.preventDefault();
             this.classList.toggle("active");
@@ -94,9 +117,9 @@ function load(){
         return
     }    
     var arr_load=JSON.parse(localStorage.getItem('points'))
-    var elements = document.querySelectorAll(".select_points")
+    var selected_points = document.querySelectorAll(".select_points")
     var i = 0;
-    elements.forEach(function(element){
+    selected_points.forEach(function(element){
         console.log(element);
         element.selectedIndex=arr_load[i];
         i++;
@@ -105,13 +128,13 @@ function load(){
 
 function save(){
     var arr_save=[];
-    var elements = document.querySelectorAll(".select_points")
-    console.log(elements)
-    elements.forEach(function(element){
+    var submit_mode = document.querySelectorAll(".submit_mode")
+    submit_mode.forEach(function(element){
         console.log(element);
         arr_save.push(element.selectedIndex)
     })
-    localStorage.setItem('points',JSON.stringify(arr_save))
+    localStorage.setItem('submit_mode',JSON.stringify(arr_save))
+    localStorage.setItem('points',JSON.stringify(all_scores))
 }
 
 // Restricts input for the given textbox to the given inputFilter function.
