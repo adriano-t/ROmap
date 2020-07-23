@@ -64,7 +64,7 @@ window.addEventListener("load", function(){
              //console.log(event.target.classList)
              if(event.target.classList.contains("submit_mode") || event.target.classList.contains("select_points") || event.target.parentNode.classList.contains("submit_mode") ||event.target.parentNode.classList.contains("select_points"))
                      return; 
-            event.preventDefault();
+            //event.preventDefault();
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             if (panel.style.maxHeight)

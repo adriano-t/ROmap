@@ -27,13 +27,31 @@ body{
     margin-top:5px;
     font-weight:bold;
   }
+  .center{
+    text-align: center;
+  }
+  .link{
+    text-decoration: none;
+    color:#0c8d51
+  }
 
+  .link:hover{
+    text-decoration: none;
+    color:#0b9482
+  }
+
+  h1{
+    text-shadow: 2px 2px 6px #0000001c
+  }
+  
   .arrow-container{ 
       width: 30px; 
       float: left;
       line-height: 50px;
   }
-
+  .inline {
+    display:inline-block;
+  }
   .excontainer{
     float: left;
     height: 60px;

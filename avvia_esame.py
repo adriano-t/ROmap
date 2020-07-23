@@ -28,6 +28,5 @@ try:
     p3b.communicate()
 except KeyboardInterrupt:
     print("\n----Closing program---\n")
-    p4 = subprocess.Popen(pythonPath + " -m jupyter notebook stop " + jupyterPort, shell=True)
-
-#During handling of the above exception, another exception occurred:
+    p4a = subprocess.Popen(pythonPath + " -m jupyter notebook stop " + jupyterPort, shell=True)
+    p4b = subprocess.Popen(pythonPath + " -m notebook stop " + jupyterPort, shell=True)
