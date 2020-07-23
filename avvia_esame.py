@@ -11,22 +11,16 @@ pythonPath = sys.executable
 p1 = subprocess.Popen(pythonPath + " -m http.server " + webserverPort + " --bind " + webserverIp, shell=True)
 webbrowser.open("http://" + webserverIp + ":" + webserverPort + "/map/index.html?port="+jupyterPort)
 
+
+# stop jupyter notebook
+p2 = subprocess.Popen(pythonPath + " -m notebook stop " + jupyterPort, shell=True)
 # start jupyter notebook
-
-p2a = subprocess.Popen(pythonPath + " -m notebook stop " + jupyterPort, shell=True)
-p3a = subprocess.Popen(pythonPath + " -m notebook --port " + jupyterPort, shell=True) 
-
-
-p2b = subprocess.Popen(pythonPath + " -m jupyter notebook stop " + jupyterPort, shell=True)
-p3b = subprocess.Popen(pythonPath + " -m jupyter notebook --port " + jupyterPort, shell=True) 
+p3 = subprocess.Popen(pythonPath + " -m notebook --port " + jupyterPort, shell=True) 
 
 try:
     p1.communicate()
-    p2a.communicate()
-    p3a.communicate()
-    p2b.communicate()
-    p3b.communicate()
+    p2.communicate()
+    p3.communicate()
 except KeyboardInterrupt:
     print("\n----Closing program---\n")
-    p4a = subprocess.Popen(pythonPath + " -m jupyter notebook stop " + jupyterPort, shell=True)
-    p4b = subprocess.Popen(pythonPath + " -m notebook stop " + jupyterPort, shell=True)
+    p4 = subprocess.Popen(pythonPath + " -m notebook stop " + jupyterPort, shell=True)
