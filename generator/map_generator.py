@@ -1,3 +1,4 @@
+import html
 
 def generate(data):
     """Returns the generated html"""
@@ -36,15 +37,15 @@ def generate(data):
                     task_values += '<option value="'+str(i)+'">'+str(i)+'</option>\n'
 
                 tasks_html += task_template.format(
-                    ex_task_name = "Task " + str(task_idx),
+                    ex_task_name = "Task " + html.escape(str(task_idx)),
                     ex_task_values = task_values,
                     ex_task_max_points = str(task["tot_points"] ),
-                    ex_task_description = task["description1"]
+                    ex_task_description = html.escape(task["description1"])
                 ) + "\n"
                 task_idx += 1
             
             outHTML += exercise_template.format(
-                ex_title = exercise["title"],
+                ex_title = html.escape(exercise["title"]),
                 ex_tags = ex_tags,
                 ex_tot_points = tot_points,
                 ex_link = exercise["link"],
