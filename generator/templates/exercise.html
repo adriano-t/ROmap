@@ -1,0 +1,26 @@
+<button class="accordion main_exercise">
+    <div class="arrow-container">
+    <i class="fas fa-chevron-down"></i></div>
+    <div class="inline">
+        <div>
+            <h3 class="exname inline">{ex_title}</h3>
+            <a class="link" target="_blank" href="{ex_link}">Apri in Jupyter <i class="fas fa-link"></i></a>
+        </div>
+        {ex_tags}
+    </div>
+    <div class="score">
+        <div class="box">
+            <h3 class="section">Modalità di sottoposizione: </h3> 
+            <select name="submit_mode" class="submit_mode">
+                <option value="1">Libera</option>
+                <option value="2">Strutturata</option>
+            </select>
+        </div> 
+        <span class="maxpoints">0</span> / 
+        <span class="maxpoints">{ex_tot_points}pts</span>
+    </div>
+
+</button>
+<div class="panel">
+{ex_tasks}
+</div>

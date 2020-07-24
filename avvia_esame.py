@@ -1,4 +1,3 @@
-
 import os
 import sys
 import subprocess
@@ -10,7 +9,6 @@ pythonPath = sys.executable
 # start local http server
 p1 = subprocess.Popen(pythonPath + " -m http.server " + webserverPort + " --bind " + webserverIp, shell=True)
 webbrowser.open("http://" + webserverIp + ":" + webserverPort + "/map/index.html?port="+jupyterPort)
-
 
 # stop jupyter notebook
 p2 = subprocess.Popen(pythonPath + " -m notebook stop " + jupyterPort, shell=True)

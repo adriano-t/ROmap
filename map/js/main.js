@@ -4,13 +4,12 @@ var current_modes=[];
 var tot_num_subprob;
 var textarea_notes = [];
 window.addEventListener("load", function(){
-    tot_num_subprob = document.querySelectorAll(".select_points").length
-    num_modes=document.querySelector(".submit_mode").length
-    
+    tot_num_subprob = document.querySelectorAll(".select_points").length;
+    num_modes=document.querySelector(".submit_mode").length;
 
-    for(i=0;i<num_modes;i++){
-        var a=[]
-        for(j=0;j<tot_num_subprob;j++)
+    for(var i = 0; i < num_modes; i++) {
+        var a = [];
+        for(var j = 0; j < tot_num_subprob; j++)
             a.push(0);
         all_scores.push(a);
     }
@@ -32,26 +31,28 @@ window.addEventListener("load", function(){
     var sel = document.querySelectorAll(".select_points")
     var i = 0; 
     sel.forEach(function(element){
-        var exercise_index = i;
-        var accordion = element.parentNode.parentNode;
-        element.addEventListener("change", function(){
-            var current_index_mod = accordion.querySelector(".submit_mode").selectedIndex;
-            saveScores(exercise_index, current_index_mod, element.selectedIndex)
-            saveSubmitModes();
-            updateTotalScore(element);
+        var exercise_index = i;  
+        var parentAccordion = findSibling(element.parentNode.parentNode.parentNode, "accordion");
+        var panel = parentAccordion.nextElementSibling;
+        var submit_mode = parentAccordion.querySelector(".submit_mode");
+        element.addEventListener("change", function(){ 
+            var current_index_mode = submit_mode.selectedIndex;
+            saveScores(exercise_index, current_index_mode, element.selectedIndex);
+            updateTotalScoreAll();
         })
         i++;
     })
     
     //add event listeners for submit-mode selection
-    var sel = document.querySelectorAll(".submit_mode")
+    var sel = document.querySelectorAll(".submit_mode");
     var i = 0; 
-    sel.forEach(function(element){
-        var exercise_index = i;
+    sel.forEach(function(element){ 
         element.addEventListener("change", function(){
-            updateScore(exercise_index, element.selectedIndex);
+            
+            updateScores();
             saveSubmitModes();
-            updateTotalScore(element);
+            
+            updateTotalScoreAll();
         });
         i++;
     })
@@ -61,9 +62,13 @@ window.addEventListener("load", function(){
     var i;
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function(event) {
-             //console.log(event.target.classList)
-             if(event.target.classList.contains("submit_mode") || event.target.classList.contains("select_points") || event.target.parentNode.classList.contains("submit_mode") ||event.target.parentNode.classList.contains("select_points"))
-                     return; 
+
+             //prevent click on select nodes
+             if(event.target.tagName.toLowerCase() == "select" ||
+                event.target.parentNode.tagName.toLowerCase() == "option")
+                return;
+                
+
             //event.preventDefault();
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
@@ -80,28 +85,17 @@ window.addEventListener("load", function(){
                 
             //expand parent
             this.parentElement.style.maxHeight = this.parentElement.scrollHeight + "px"; 
-            //console.log(this.parentElement);
         });
     }
 
     //numeric inputs
     var numberInputs = document.getElementsByClassName("number"); 
     for (i = 0; i < numberInputs.length; i++) {
-        //console.log(numberInputs[i]);
         setInputFilter(numberInputs[i], function(value){
             return /^\d*$/.test(value);
         });
     }
-    //const yaml = require('js-yaml');
-    //;
-    // try {
-    //     let fileContents = readTextFile("./poldo.yaml", function(text){
-    //         let data = jsyaml.safeLoad(text);
-    //         console.log(data);
-    //     });
-    // } catch (e) {
-    //     console.log(e);
-    // }
+  
     load();
 }, false);
 
@@ -143,32 +137,18 @@ function readTextFile(file, func)
     rawFile.send(null);
 }
 
-//update total score of the parent exercise
-function updateTotalScore(element){
-    var accordion = findParent(element, "accordion"); 
-    var panel = accordion.parentNode;
-    var parentAccordion = findSibling(panel, "accordion"); 
-
-    var sel = panel.querySelectorAll(".select_points")
-    var sum=0;
-    sel.forEach(function(sel){
-        sum+=parseInt(sel.value);
-    })
-    parentAccordion.querySelector(".maxpoints").innerHTML = sum; 
-}
-
 //update total score of every exercise
 function updateTotalScoreAll(){
-    var panels = document.querySelectorAll(".panel")
-    panels.forEach(function(panel)
+    var exercises = document.querySelectorAll(".main_exercise")
+    exercises.forEach(function(exercise)
     {
-        var sel = panel.querySelectorAll(".select_points")
+        var panel = exercise.nextElementSibling;
+        var sel = panel.querySelectorAll(".select_points");
         var sum=0;
         sel.forEach(function(sel){
             sum+=parseInt(sel.value);
-        })
-        var parentAccordion = findSibling(panel, "accordion");
-        parentAccordion.querySelector(".maxpoints").innerHTML = sum; 
+        }) 
+        exercise.querySelector(".maxpoints").innerHTML = sum; 
     });
 }
 
@@ -216,27 +196,15 @@ function load()
 
     //load all scores
     var pts =localStorage.getItem('points');
-    if(pts)
-    {
-        all_scores = JSON.parse(pts)
-
-        //load selected score for each exercise
-        var selected_points = document.querySelectorAll(".select_points")
-        var ex_index = 0;
-        selected_points.forEach(function(element){
-            var exercise_submitmode = loaded_submit_modes[ex_index];
-            element.selectedIndex = all_scores[exercise_submitmode][ex_index];
-            console.log("exercise index:", element.selectedIndex)
-            ex_index++;
-        });
+    if(pts) {
+        all_scores = JSON.parse(pts);
+        updateScores();
     }
 
     //load notes
     var notes = localStorage.getItem("notes");
-    if(notes)
-    {
+    if(notes) {
         textarea_notes = JSON.parse(notes);
-        console.log("load", textarea_notes);
         //add event listeners for textareas
         var areas = document.querySelectorAll(".notes");
         var i = 0; 
@@ -251,36 +219,36 @@ function load()
     updateTotalScoreAll();
 }
 
-function updateScore(exerciseIndex, selectedMode)
-{
-    var sel = document.querySelectorAll(".select_points");
-    var current_score = all_scores[selectedMode][exerciseIndex];
-    sel[exerciseIndex].selectedIndex = current_score;
-    console.log(current_score, sel[exerciseIndex].selectedIndex);
+      //load selected score for each exercise
+function updateScores() {
+      var selected_points = document.querySelectorAll(".select_points")
+      var sub_ex_index = 0;
+      selected_points.forEach(function(element) {
+          var panel = element.parentNode.parentNode.parentNode;
+          var accordion = findSibling(panel, "accordion")
+          var exercise_submitmode = accordion.querySelector(".submit_mode").selectedIndex;
+          element.selectedIndex = all_scores[exercise_submitmode][sub_ex_index];
+          sub_ex_index++;
+      });
 }
 
-function saveSubmitModes()
-{
+function saveSubmitModes() {
     //save submit modes
     var arr_save = [];
-    var selected_modes = document.querySelectorAll(".submit_mode")
+    var selected_modes = document.querySelectorAll(".submit_mode");
     var i = 0;
-    selected_modes.forEach(function(element){
+    selected_modes.forEach(function(element) {
         arr_save[i] = element.selectedIndex;
         i++;
     });
-    console.log("save submit_mode", arr_save);
-    localStorage.setItem('submit_mode',JSON.stringify(arr_save))
+    localStorage.setItem('submit_mode', JSON.stringify(arr_save))
 }
 
 /// save in the scores matrix the updated the current selected value index
-function saveScores(exercise_index , mode_index , selected_value_index) {
-    console.log(exercise_index+")", mode_index, selected_value_index)
+function saveScores(exercise_index, mode_index, selected_value_index) {
     //save updated score
-    all_scores[mode_index][exercise_index]=selected_value_index
-    localStorage.setItem('points',JSON.stringify(all_scores))
-    console.log("save all_scores", all_scores);
-
+    all_scores[mode_index][exercise_index] = selected_value_index;
+    localStorage.setItem('points', JSON.stringify(all_scores))
 }
 
 // Restricts input for the given textbox to the given inputFilter function.

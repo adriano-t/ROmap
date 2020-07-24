@@ -1,0 +1,21 @@
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">{ex_task_name}</div>
+    <div class="score">
+        <select class="select_points">
+            {ex_task_values}
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">{ex_task_max_points}pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>{ex_task_description}</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>

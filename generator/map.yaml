@@ -1,0 +1,144 @@
+esercizi: [
+{
+    title: "Sottosequenze crescenti e decrescenti",
+    tags: ["programmazione dinamica"],
+    tot_points: 60,
+    link: "esercizio_01/modo_libero/Esercizio_01.ipynb",
+    tasks: [
+     {
+       tot_points: 10,
+       ver_points: 10,
+       description1: "Trovare una sottosequenza crescente che sia la piu' lunga possibile"
+     },
+     {
+        tot_points: 20,
+        ver_points: 20,
+        description1: "Trovare quante sono le sottosequenze crescenti di lunghezza massima"
+     },
+     {
+        tot_points: 20,
+        ver_points: 20,
+        description1: "Una sequenza e' detta una _Z-sequenza_ , o sequenza crescente con un possibile ripensamento, se esiste un indice _i_ tale che ciascuno degli elementi della sequenza esclusi al piu' il primo e l'_i_-esimo sono strettamente maggiori dell'elemento che immediatamente li precede nella sequenza. Trovare la piu' lunga Z-sequenza che sia una sottosequenza della sequenza data"
+      },
+      {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "Trovare la piu' lunga sottosequenza crescente che includa l'elemento di valore 32"
+      }
+   ]
+},
+{
+    title: "Cammini del robot Bimo in un campo minato",
+    tags: ["programmazione dinamica"],
+    tot_points: 60,
+    link: "esercizio_02/modo_libero/Esercizio_02.ipynb",
+    tasks: [
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "Quante monetine puo' raccogliere al massimo il robot, spostandosi dalla sua posizione iniziale A1 fino a H?"
+      },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "E se la partenza e' in D4?"
+    },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "Quante sono le soluzioni ottime con partenza in D4?"
+    },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "E se con partenza in A1 il robot deve giungere in F7?"
+    },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "Quante sono le soluzioni ottime con arrivo in F7?"
+    },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "E se con partenza in A1 e arrivo in G9 al robot viene richiesto di passare per la cella D4?"
+      },
+   ]
+},
+{
+    title: "Sottosequenza comune",
+    tags: ["programmazione dinamica", "lcs"],
+    tot_points: 50,
+    link: "esercizio_03/modo_libero/Esercizio_03.ipynb",
+    tasks: [
+     {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "Qual e' la piu' lunga sottosequenza comune tra _s_ e _t_?"
+     },
+     {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "E nel caso sia richiesto che la sottosequenza comune incominci con 'C'?"
+    },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "E nel caso sia richiesto che la sottosequenza comune incominci con 'G'?"
+    },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "Qual e' la piu' lunga sottosequenza comune tra _s_ e il suffisso _t9_ = TCAACCTAT di _t_?"
+    },
+    {
+        tot_points: 10,
+        ver_points: 10,
+        description1: "Qual e' la piu' lunga sottosequenza comune tra _t_ e il prefisso _s8_ = ATTCTCAC di _s_?"
+    },
+  ]
+},
+{
+    title: "Programmazione lineare - Metodo del Simplesso e Dualita'",
+    tags: ["programmazione lineare", "dualita'" ],
+    tot_points: 100,
+    link: "esercizio_04/modo_libero/Esercizio_04.ipynb",
+    tasks: [
+      {
+        tot_points: 10,
+        ver_points: 0,
+        description1: "Sfruttando la libreria del simplesso interattivo, creare il primo tableau"
+      },
+      {
+        tot_points: 10,
+        ver_points: 0,
+        description1: "Scrivere il vettore dei coefficienti di costo ridotto dopo la prima iterazione"
+     },
+     {
+        tot_points: 30,
+        ver_points: 0,
+        description1: "Risolvere il problema sfruttando la libreria del simplesso interattivo, indicando la soluzione primale estesa ottima e il valore della funzione obiettivo"
+     },
+     {
+        tot_points: 10,
+        ver_points: 0,
+        description1: "Prendendo a riferimento la soluzione di base data dall'origine, fare la prova del 9 del tableau ottimo"
+     },
+     {
+        tot_points: 10,
+        ver_points: 0,
+        description1: "Formulare il problema duale"
+    },
+    {
+        tot_points: 10,
+        ver_points: 0,
+        description1: "Risolvere il problema duale utilizzando le condizioni di complementary slackness, indicando la soluzione duale estesa ottima e il valore della funzione obiettivo"
+    },
+    {
+        tot_points: 20,
+        ver_points: 0,
+        description1: "Domanda di teoria"
+    }
+   ]
+  }
+]

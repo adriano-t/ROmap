@@ -13,7 +13,7 @@
     <body> 
         <h1 class="center"><i class="fas fa-map-marked-alt"></i> Mappa Esame</h1>
          
-        <button class="accordion">
+        <button class="accordion main_exercise">
             <div class="arrow-container">
             <i class="fas fa-chevron-down"></i></div>
             <div class="inline">
@@ -25,7 +25,17 @@
                 <div class="competence">Grafi</div>
                 <div class="competence">Modellazione</div> 
             </div>
-            <div class="score"><span class="maxpoints">45</span> / <span class="maxpoints">300pts</span></div>
+            <div class="score">
+                <div class="box">
+                    <h3 class="section">Modalità di sottoposizione: </h3> 
+                    <select name="submit_mode" class="submit_mode">
+                        <option value="1">Libera</option>
+                        <option value="2">Strutturata</option>
+                    </select>
+                </div> 
+                <span class="maxpoints">45</span> / 
+                <span class="maxpoints">300pts</span>
+            </div>
         
         </button>
         <div class="panel">
@@ -34,13 +44,6 @@
                 <i class="fas fa-chevron-down"></i>
                 <div class="subexname">Sotto Problema 1</div>
                 <div class="score">
-                    <div class="box">
-                        <h3 class="section">Modalità di sottoposizione: </h3> 
-                        <select name="submit_mode" class="submit_mode">
-                            <option value="1">Libera</option>
-                            <option value="2">Strutturata</option>
-                        </select>
-                    </div> 
                     <select class="select_points">
                         <option value="10">10</option>
                         <option value="20">20</option>
@@ -60,13 +63,6 @@
                 <i class="fas fa-chevron-down"></i>
                 <div class="subexname">Sotto Problema 2</div>
                 <div class="score">
-                <div class="box">
-                    <h3 class="section">Modalità di sottoposizione: </h3> 
-                    <select name="submit_mode" class="submit_mode">
-                        <option value="1">Libera</option>
-                        <option value="2">Strutturata</option>
-                    </select>
-                </div> 
                 <select class="select_points">
                     <option value="10">10</option>
                     <option value="20">20</option>
@@ -85,13 +81,6 @@
                 <i class="fas fa-chevron-down"></i>
                 <div class="subexname">Sotto Problema 3</div>
                 <div class="score">
-                <div class="box">
-                    <h3 class="section">Modalità di sottoposizione: </h3> 
-                    <select name="submit_mode" class="submit_mode">
-                        <option value="1">Libera</option>
-                        <option value="2">Strutturata</option>
-                    </select>
-                </div> 
                 <select class="select_points">
                     <option value="10">10</option>
                     <option value="20">20</option>
@@ -111,7 +100,7 @@
 
         <!-- ESERCIZIO 2-->
 
-        <button class="accordion">
+        <button class="accordion main_exercise">
             <div class="arrow-container">
             <i class="fas fa-chevron-down"></i></div>
                 <div style="display:inline-block"> <div>
@@ -122,14 +111,7 @@
                 <div class="competence">Programmazione Lineare</div> 
                 <div class="competence">Programmazione Dinamica</div> 
             </div>
-            <div class="score"><span class="maxpoints">45</span> / <span class="maxpoints">300pts</span></div>
-        
-        </button>
-        <div class="panel">
-            <button class="accordion">
-                <i class="fas fa-chevron-down"></i>
-                <div class="subexname">Sotto Problema 1</div>
-                <div class="score">
+            <div class="score">
                 <div class="box">
                     <h3 class="section">Modalità di sottoposizione: </h3> 
                     <select name="submit_mode" class="submit_mode">
@@ -137,6 +119,16 @@
                         <option value="2">Strutturata</option>
                     </select>
                 </div> 
+                <span class="maxpoints">45</span> / 
+                <span class="maxpoints">300pts</span>
+            </div>
+        
+        </button>
+        <div class="panel">
+            <button class="accordion">
+                <i class="fas fa-chevron-down"></i>
+                <div class="subexname">Sotto Problema 1</div>
+                <div class="score">
                 <select class="select_points">
                     <option value="10">10</option>
                     <option value="20">20</option>
@@ -154,14 +146,7 @@
             <button class="accordion">
                 <i class="fas fa-chevron-down"></i>
                 <div class="subexname">Sotto Problema 2</div>
-                <div class="score">
-                <div class="box">
-                    <h3 class="section">Modalità di sottoposizione: </h3> 
-                    <select name="submit_mode" class="submit_mode">
-                        <option value="1">Libera</option>
-                        <option value="2">Strutturata</option>
-                    </select>
-                </div> 
+                <div class="score"> 
                 <select class="select_points">
                     <option value="10">10</option>
                     <option value="20">20</option>
@@ -180,13 +165,6 @@
                 <i class="fas fa-chevron-down"></i>
                 <div class="subexname">Sotto Problema 3</div>
                 <div class="score">
-                <div class="box">
-                    <h3 class="section">Modalità di sottoposizione: </h3> 
-                    <select name="submit_mode" class="submit_mode">
-                        <option value="1">Libera</option>
-                        <option value="2">Strutturata</option>
-                    </select>
-                </div> 
                 <select class="select_points">
                     <option value="10">10</option>
                     <option value="20">20</option>
