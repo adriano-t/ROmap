@@ -12,179 +12,843 @@
     </head>
     <body> 
         <h1 class="center"><i class="fas fa-map-marked-alt"></i> Mappa Esame</h1>
-         
-        <button class="accordion main_exercise">
-            <div class="arrow-container">
-            <i class="fas fa-chevron-down"></i></div>
-            <div class="inline">
-                <div>
-                    <h3 class="exname inline">Esercizio 1 Poldo</h3>
-                    <a class="link" target="_blank" href="http://127.0.0.1:8888/notebooks/esercizio_01/modo_libero/Esercizio_01.ipynb">Apri su Jupyter <i class="fas fa-link"></i></a>
-                </div>
-                <div class="competence">Buona caratterizzazione</div>
-                <div class="competence">Grafi</div>
-                <div class="competence">Modellazione</div> 
-            </div>
-            <div class="score">
-                <div class="box">
-                    <h3 class="section">Modalità di sottoposizione: </h3> 
-                    <select name="submit_mode" class="submit_mode">
-                        <option value="1">Libera</option>
-                        <option value="2">Strutturata</option>
-                    </select>
-                </div> 
-                <span class="maxpoints">45</span> / 
-                <span class="maxpoints">300pts</span>
-            </div>
-        
-        </button>
-        <div class="panel">
-        
-            <button class="accordion">
-                <i class="fas fa-chevron-down"></i>
-                <div class="subexname">Sotto Problema 1</div>
-                <div class="score">
-                    <select class="select_points">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="100">100</option>
-                    </select>  
-                    / <span class="maxpoints">100pts</span>
-                </div>
-            </button>
-            <div class="panel">
-            <p>Trovare una sottosequenza 𝑠2 strettamente decrescente di 𝑠 che sia la più lunga possibile.</p>
-            <b> Note Personali</b>
-            <textarea class="notes"></textarea>
-            </div>
-
-            <button class="accordion">
-                <i class="fas fa-chevron-down"></i>
-                <div class="subexname">Sotto Problema 2</div>
-                <div class="score">
-                <select class="select_points">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="100">100</option>
-                </select>  
-                / <span class="maxpoints">100pts</span></div>
-            </button>
-            <div class="panel">
-            <p>Trovare una sottosequenza 𝑠2 strettamente decrescente di 𝑠 che sia la più lunga possibile.</p>
-            <b> Note Personali</b>
-            <textarea class="notes"></textarea>
-            </div>
-
-            <button class="accordion">
-                <i class="fas fa-chevron-down"></i>
-                <div class="subexname">Sotto Problema 3</div>
-                <div class="score">
-                <select class="select_points">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="100">100</option>
-                </select>  
-                / <span class="maxpoints">100pts</span></div>
-            </button>
-            <div class="panel">
-            <p>Trovare una sottosequenza 𝑠2 strettamente decrescente di 𝑠 che sia la più lunga possibile.</p>
-            <b> Note Personali</b>
-            <textarea class="notes"></textarea>
-            </div>
-
+         <button class="accordion main_exercise">
+    <div class="arrow-container">
+    <i class="fas fa-chevron-down"></i></div>
+    <div class="inline">
+        <div>
+            <h3 class="exname inline">Sottosequenze crescenti e decrescenti</h3>
+            <a class="link" target="_blank" href="esercizio_01/modo_libero/Esercizio_01.ipynb">Apri in Jupyter <i class="fas fa-link"></i></a>
         </div>
+        <div class="competence">programmazione dinamica</div> 
+    </div>
+    <div class="score">
+        <div class="box">
+            <h3 class="section">Modalità di sottoposizione: </h3> 
+            <select name="submit_mode" class="submit_mode">
+                <option value="1">Libera</option>
+                <option value="2">Strutturata</option>
+            </select>
+        </div> 
+        <span class="maxpoints">0</span> / 
+        <span class="maxpoints">60pts</span>
+    </div>
 
+</button>
+<div class="panel">
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 1</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
 
-        <!-- ESERCIZIO 2-->
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Trovare una sottosequenza crescente che sia la piu' lunga possibile</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 2</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
 
-        <button class="accordion main_exercise">
-            <div class="arrow-container">
-            <i class="fas fa-chevron-down"></i></div>
-                <div style="display:inline-block"> <div>
-                    <h3 class="exname inline">Esercizio 2 Sequenza</h3>
-                    <a class="link" target="_blank" href="http://127.0.0.1:8888/notebooks/esercizio_02/modo_libero/Esercizio_02.ipynb">Apri su Jupyter <i class="fas fa-link"></i></a>
-                </div>
-                <div class="competence">Grafi</div>
-                <div class="competence">Programmazione Lineare</div> 
-                <div class="competence">Programmazione Dinamica</div> 
-            </div>
-            <div class="score">
-                <div class="box">
-                    <h3 class="section">Modalità di sottoposizione: </h3> 
-                    <select name="submit_mode" class="submit_mode">
-                        <option value="1">Libera</option>
-                        <option value="2">Strutturata</option>
-                    </select>
-                </div> 
-                <span class="maxpoints">45</span> / 
-                <span class="maxpoints">300pts</span>
-            </div>
-        
-        </button>
-        <div class="panel">
-            <button class="accordion">
-                <i class="fas fa-chevron-down"></i>
-                <div class="subexname">Sotto Problema 1</div>
-                <div class="score">
-                <select class="select_points">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="100">100</option>
-                </select>  
-                / <span class="maxpoints">100pts</span></div>
-            </button>
-            <div class="panel">
-            <p>Trovare una sottosequenza 𝑠2 strettamente decrescente di 𝑠 che sia la più lunga possibile.</p>
-            <b> Note Personali</b>
-            <textarea class="notes"></textarea>
-            </div>
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">20pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Trovare quante sono le sottosequenze crescenti di lunghezza massima</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 3</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
 
-            <button class="accordion">
-                <i class="fas fa-chevron-down"></i>
-                <div class="subexname">Sotto Problema 2</div>
-                <div class="score"> 
-                <select class="select_points">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="100">100</option>
-                </select>  
-                / <span class="maxpoints">100pts</span></div>
-            </button>
-            <div class="panel">
-            <p>Trovare una sottosequenza 𝑠2 strettamente decrescente di 𝑠 che sia la più lunga possibile.</p>
-            <b> Note Personali</b>
-            <textarea class="notes"></textarea>
-            </div>
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">20pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Una sequenza e' detta una _Z-sequenza_ , o sequenza crescente con un possibile ripensamento, se esiste un indice _i_ tale che ciascuno degli elementi della sequenza esclusi al piu' il primo e l'_i_-esimo sono strettamente maggiori dell'elemento che immediatamente li precede nella sequenza. Trovare la piu' lunga Z-sequenza che sia una sottosequenza della sequenza data</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 4</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
 
-            <button class="accordion">
-                <i class="fas fa-chevron-down"></i>
-                <div class="subexname">Sotto Problema 3</div>
-                <div class="score">
-                <select class="select_points">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="40">100</option>
-                </select> 
-                / <span class="maxpoints">100pts</span></div>
-            </button>
-            <div class="panel">
-            <p>Trovare una sottosequenza 𝑠2 strettamente decrescente di 𝑠 che sia la più lunga possibile.</p>
-            <b> Note Personali</b>
-            <textarea class="notes"></textarea>
-            </div>
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Trovare la piu' lunga sottosequenza crescente che includa l'elemento di valore 32</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
 
+</div><button class="accordion main_exercise">
+    <div class="arrow-container">
+    <i class="fas fa-chevron-down"></i></div>
+    <div class="inline">
+        <div>
+            <h3 class="exname inline">Cammini del robot Bimo in un campo minato</h3>
+            <a class="link" target="_blank" href="esercizio_02/modo_libero/Esercizio_02.ipynb">Apri in Jupyter <i class="fas fa-link"></i></a>
         </div>
+        <div class="competence">programmazione dinamica</div> 
+    </div>
+    <div class="score">
+        <div class="box">
+            <h3 class="section">Modalità di sottoposizione: </h3> 
+            <select name="submit_mode" class="submit_mode">
+                <option value="1">Libera</option>
+                <option value="2">Strutturata</option>
+            </select>
+        </div> 
+        <span class="maxpoints">0</span> / 
+        <span class="maxpoints">60pts</span>
+    </div>
 
-        <br>
-        <!--
-        <button class="collapse-all">Collassa albero</button>
-        <button class="collapse-all">Espandi albero</button>
-        -->
-    </body>
+</button>
+<div class="panel">
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 1</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Quante monetine puo' raccogliere al massimo il robot, spostandosi dalla sua posizione iniziale A1 fino a H?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 2</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>E se la partenza e' in D4?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 3</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Quante sono le soluzioni ottime con partenza in D4?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 4</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>E se con partenza in A1 il robot deve giungere in F7?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 5</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Quante sono le soluzioni ottime con arrivo in F7?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 6</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>E se con partenza in A1 e arrivo in G9 al robot viene richiesto di passare per la cella D4?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+
+</div><button class="accordion main_exercise">
+    <div class="arrow-container">
+    <i class="fas fa-chevron-down"></i></div>
+    <div class="inline">
+        <div>
+            <h3 class="exname inline">Sottosequenza comune</h3>
+            <a class="link" target="_blank" href="esercizio_03/modo_libero/Esercizio_03.ipynb">Apri in Jupyter <i class="fas fa-link"></i></a>
+        </div>
+        <div class="competence">programmazione dinamica</div> <div class="competence">lcs</div> 
+    </div>
+    <div class="score">
+        <div class="box">
+            <h3 class="section">Modalità di sottoposizione: </h3> 
+            <select name="submit_mode" class="submit_mode">
+                <option value="1">Libera</option>
+                <option value="2">Strutturata</option>
+            </select>
+        </div> 
+        <span class="maxpoints">0</span> / 
+        <span class="maxpoints">50pts</span>
+    </div>
+
+</button>
+<div class="panel">
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 1</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Qual e' la piu' lunga sottosequenza comune tra _s_ e _t_?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 2</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>E nel caso sia richiesto che la sottosequenza comune incominci con 'C'?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 3</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>E nel caso sia richiesto che la sottosequenza comune incominci con 'G'?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 4</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Qual e' la piu' lunga sottosequenza comune tra _s_ e il suffisso _t9_ = TCAACCTAT di _t_?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 5</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Qual e' la piu' lunga sottosequenza comune tra _t_ e il prefisso _s8_ = ATTCTCAC di _s_?</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+
+</div><button class="accordion main_exercise">
+    <div class="arrow-container">
+    <i class="fas fa-chevron-down"></i></div>
+    <div class="inline">
+        <div>
+            <h3 class="exname inline">Programmazione lineare - Metodo del Simplesso e Dualita'</h3>
+            <a class="link" target="_blank" href="esercizio_04/modo_libero/Esercizio_04.ipynb">Apri in Jupyter <i class="fas fa-link"></i></a>
+        </div>
+        <div class="competence">programmazione lineare</div> <div class="competence">dualita'</div> 
+    </div>
+    <div class="score">
+        <div class="box">
+            <h3 class="section">Modalità di sottoposizione: </h3> 
+            <select name="submit_mode" class="submit_mode">
+                <option value="1">Libera</option>
+                <option value="2">Strutturata</option>
+            </select>
+        </div> 
+        <span class="maxpoints">0</span> / 
+        <span class="maxpoints">100pts</span>
+    </div>
+
+</button>
+<div class="panel">
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 1</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Sfruttando la libreria del simplesso interattivo, creare il primo tableau</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 2</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Scrivere il vettore dei coefficienti di costo ridotto dopo la prima iterazione</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 3</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">30pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Risolvere il problema sfruttando la libreria del simplesso interattivo, indicando la soluzione primale estesa ottima e il valore della funzione obiettivo</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 4</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Prendendo a riferimento la soluzione di base data dall'origine, fare la prova del 9 del tableau ottimo</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 5</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Formulare il problema duale</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 6</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">10pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Risolvere il problema duale utilizzando le condizioni di complementary slackness, indicando la soluzione duale estesa ottima e il valore della funzione obiettivo</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+<button class="accordion">
+    <i class="fas fa-chevron-down"></i>
+    <div class="subexname">Task 7</div>
+    <div class="score">
+        <select class="select_points">
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+
+            <!--
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            -->
+        </select>  
+        / <span class="maxpoints">20pts</span>
+    </div>
+</button>
+<div class="panel">
+<p>Domanda di teoria</p>
+<b> Note Personali</b>
+<textarea class="notes"></textarea>
+</div>
+
+</div>    
+    <br>
+    <!--
+    <button class="collapse-all">Collassa albero</button>
+    <button class="collapse-all">Espandi albero</button>
+    -->
+</body>
 </html>
