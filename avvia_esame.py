@@ -2,9 +2,12 @@ import os
 import sys
 import subprocess
 import webbrowser
-from config import * 
 
 conda_environment = "ROexam"
+webserverPort = "8080"
+webserverIp = "127.0.0.1"
+jupyterPort = "8888"
+
 if len(sys.argv) == 2:
     conda_environment = sys.argv[1]
 
@@ -13,7 +16,6 @@ try:
     subprocess.Popen("conda").terminate()
 except:
     conda_installed = False
-
 
 pythonPath = sys.executable
 
