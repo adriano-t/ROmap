@@ -152,6 +152,61 @@ function updateTotalScoreAll(){
     });
 }
 
+function exportMap()
+{
+    console.log("exporting map");
+    var exercises = document.querySelectorAll(".main_exercise");
+    var out_exercises = [];
+    exercises.forEach(function(ex){
+        var pointsElements = ex.querySelectorAll(".maxpoints");
+        var total_score = parseInt(pointsElements[0].innerHTML)
+        var total_score_max = parseInt(pointsElements[1].innerHTML)
+        var submit_mode_idx = ex.querySelector(".submit_mode").selectedIndex;
+        var submit_mode = ex.querySelector(".submit_mode").options[submit_mode_idx].innerHTML;
+        //console.log("total_score" + total_score+"/"+total_score_max, submit_mode, submit_mode_idx);
+        
+        var panel = ex.nextElementSibling;
+        var tasksAccordions = panel.querySelectorAll(".accordion");
+        out_tasks = []
+        tasksAccordions.forEach(function(taskAccordion){
+            
+            var task_score = parseInt(taskAccordion.querySelector(".select_points").value)
+            var task_max_score = parseInt(taskAccordion.querySelector(".maxpoints").innerHTML)
+            
+            var task_panel = taskAccordion.nextElementSibling;
+            var task_notes = task_panel.querySelector(".notes").value
+            out_tasks = {
+                "score" : task_score,
+                "score_max" : task_max_score,
+                "notes" : task_notes
+            }
+            //console.log("    score:" + task_score+"/"+task_max_score, task_notes)
+        })
+
+        out_exercises.push({
+            "total_score": total_score,
+            "total_score_max": total_score_max,
+            "submit_mode": submit_mode,
+            "submit_mode_index": submit_mode_idx,
+            "tasks" : out_tasks,
+        })
+    })
+
+    var out_string = JSON.stringify(out_exercises, null, 2);
+    console.log(out_string);
+    download(out_string,"mappa_esportata.yaml", "text/plain;charset=utf-8");
+    alert("Mappa esportata!")
+
+}
+
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
 function findParent(element, className)
 {
     element = element.parentNode;
@@ -251,6 +306,12 @@ function saveScores(exercise_index, mode_index, selected_value_index) {
     localStorage.setItem('points', JSON.stringify(all_scores))
 }
 
+function clearStorage(){
+    if (confirm('Sei sicuro di voler cancellare tutto?')) {
+        localStorage.clear();
+        window.location.href = window.location.href;
+    }
+}
 // Restricts input for the given textbox to the given inputFilter function.
 function setInputFilter(textbox, inputFilter) {
     ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
