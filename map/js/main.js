@@ -1,9 +1,15 @@
+
 var num_modes;
 var all_scores=[];
 var current_modes=[];
 var tot_num_subprob;
 var textarea_notes = [];
+var documentHash;
+
 window.addEventListener("load", function(){
+
+    documentHash = hashString(document.documentElement.outerHTML);
+    console.log("documentHash: " + documentHash);
     tot_num_subprob = document.querySelectorAll(".select_points").length;
     num_modes=document.querySelector(".submit_mode").length;
 
@@ -21,12 +27,11 @@ window.addEventListener("load", function(){
         var exercise_index = i;
         element.addEventListener("input", function(){ 
             textarea_notes[exercise_index] = element.value;
-            localStorage.setItem("notes", JSON.stringify(textarea_notes));
+            localStorage.setItem(documentHash + "notes", JSON.stringify(textarea_notes));
         }, false)
         i++;
     })
     
-
     //add event listeners for points selection
     var sel = document.querySelectorAll(".select_points")
     var i = 0; 
@@ -175,11 +180,11 @@ function exportMap()
             
             var task_panel = taskAccordion.nextElementSibling;
             var task_notes = task_panel.querySelector(".notes").value
-            out_tasks = {
+            out_tasks.push({
                 "score" : task_score,
                 "score_max" : task_max_score,
                 "notes" : task_notes
-            }
+            });
             //console.log("    score:" + task_score+"/"+task_max_score, task_notes)
         })
 
@@ -192,11 +197,28 @@ function exportMap()
         })
     })
 
-    var out_string = JSON.stringify(out_exercises, null, 2);
-    console.log(out_string);
-    download(out_string,"mappa_esportata.yaml", "text/plain;charset=utf-8");
-    alert("Mappa esportata!")
 
+    var out_string = JSON.stringify(out_exercises, null, 2);
+    console.log(out_string, encodeURI(out_string));
+    saveMapWithServer(out_string);
+
+}
+
+function saveMapWithServer(content) {
+    var client = new XMLHttpRequest();
+    client.open("GET", "http://127.0.0.1:8080/server_command_?type=save&data=" + encodeURI(content), true);
+    client.send();
+    client.onreadystatechange = function() {
+        if(this.readyState == this.HEADERS_RECEIVED) {
+            //basic download in case of error
+            if(client.statusText != "done"){
+                download(out_string,"mappa_esportata.yaml", "text/plain;charset=utf-8");
+                alert("Mappa scaricata, ricordati di inviarla insieme all'esame")
+            }
+            else
+                alert("Mappa esportata!")
+        }
+    }
 }
 
 function download(content, fileName, contentType) {
@@ -237,7 +259,7 @@ function findSibling(element, className)
 function load()
 {
     //load selected submit modes for each exercise
-    var sub = localStorage.getItem('submit_mode');
+    var sub = localStorage.getItem(documentHash + 'submit_mode');
     if(sub)
     {
         var loaded_submit_modes = JSON.parse(sub);
@@ -250,14 +272,14 @@ function load()
     }
 
     //load all scores
-    var pts =localStorage.getItem('points');
+    var pts =localStorage.getItem(documentHash + "points");
     if(pts) {
         all_scores = JSON.parse(pts);
         updateScores();
     }
 
     //load notes
-    var notes = localStorage.getItem("notes");
+    var notes = localStorage.getItem(documentHash + "notes");
     if(notes) {
         textarea_notes = JSON.parse(notes);
         //add event listeners for textareas
@@ -296,14 +318,14 @@ function saveSubmitModes() {
         arr_save[i] = element.selectedIndex;
         i++;
     });
-    localStorage.setItem('submit_mode', JSON.stringify(arr_save))
+    localStorage.setItem(documentHash + 'submit_mode', JSON.stringify(arr_save))
 }
 
 /// save in the scores matrix the updated the current selected value index
 function saveScores(exercise_index, mode_index, selected_value_index) {
     //save updated score
     all_scores[mode_index][exercise_index] = selected_value_index;
-    localStorage.setItem('points', JSON.stringify(all_scores))
+    localStorage.setItem(documentHash + 'points', JSON.stringify(all_scores))
 }
 
 function clearStorage(){
@@ -315,17 +337,27 @@ function clearStorage(){
 // Restricts input for the given textbox to the given inputFilter function.
 function setInputFilter(textbox, inputFilter) {
     ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
-      textbox.addEventListener(event, function() {
+        textbox.addEventListener(event, function() {
         if (inputFilter(this.value)) {
-          this.oldValue = this.value;
-          this.oldSelectionStart = this.selectionStart;
-          this.oldSelectionEnd = this.selectionEnd;
+            this.oldValue = this.value;
+            this.oldSelectionStart = this.selectionStart;
+            this.oldSelectionEnd = this.selectionEnd;
         } else if (this.hasOwnProperty("oldValue")) {
-          this.value = this.oldValue;
-          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            this.value = this.oldValue;
+            this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
         } else {
-          this.value = "";
+            this.value = "";
         }
-      });
+        });
     });
-  }
+}
+
+function hashString(str) {
+    var hash = 0, len = str.length
+    if (len == 0) return hash;
+    for (var i = 0; i < len; i++) {
+        hash = hash * 31 + str.charCodeAt(i);
+        hash = hash & hash;
+    }
+    return hash;
+}
